@@ -2,7 +2,7 @@ clc
 clear
 close all
 
-folderpath = '/home/user/Documents/SymVPcontrol3D_demo';
+folderpath = '/home/user/Documents/SymVPcontrol_demo';
 ls_all = dir(folderpath);
 keys = '_T1w_corrected_bet_lin_on_mni152_Warped.nii.gz';
 ls_img = ls_all(contains({ls_all.name},keys));
