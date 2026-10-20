@@ -1,6 +1,6 @@
-# SymVP-control-beta
+# VPreg
 
-SymVP-control is a non-rigid image registration method, it is required to have your samples preprocessed. The protocols are included and ordered as follows:
+VPreg is a non-rigid image registration method, it is required to have your samples preprocessed. The protocols are included and ordered as follows:
 1. N4 bias correction;
 2. Skull skripping or brain extraction;
 3. Delineation, i.e., linear registration from samples to template. 
