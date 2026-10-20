@@ -2,7 +2,7 @@ clc
 clear
 close all
 
-folderpath = '/home/user/Documents/SymVPcontrol_demo';
+folderpath = '/home/user/Documents/VPreg_demo';
 ls_all = dir(folderpath);
 keys = '_T1w_corrected_bet_lin_on_mni152_Warped.nii.gz';
 ls_img = ls_all(contains({ls_all.name},keys));
@@ -24,13 +24,13 @@ parfor ii=1:aa
     I_m_info = niftiinfo(I_m_is);
     I_m_info.Datatype = 'single';
     
-    [phi, I_m_phi, phi_inv, I_f_phi_inv] = ImgReg_SymVPcontrol(I_m, I_f, J_thr, regrid_bd, name_is);
+    [phi, I_m_phi, phi_inv, I_f_phi_inv] = ImgReg_VPreg(I_m, I_f, J_thr, regrid_bd, name_is);
     evaluations3D(I_m, I_f, I_m_phi, I_f_phi_inv, phi, phi_inv, name_is);
 
-    niftiwrite(I_m_phi, [name_is, '_SymVPcont_Mapped'], I_f_info, "Compressed", true);
-    niftiwrite(phi, [name_is, '_SymVPcont_Map'], "Compressed", true);
-    niftiwrite(I_f_phi_inv, [name_is, '_SymVPcont_InverseMapped'], I_m_info, "Compressed", true);
-    niftiwrite(phi_inv, [name_is, '_SymVPcont_InverseMap'], "Compressed", true);
+    niftiwrite(I_m_phi, [name_is, '_VPreg_Mapped'], I_f_info, "Compressed", true);
+    niftiwrite(phi, [name_is, '_VPreg_Map'], "Compressed", true);
+    niftiwrite(I_f_phi_inv, [name_is, '_VPreg_InverseMapped'], I_m_info, "Compressed", true);
+    niftiwrite(phi_inv, [name_is, '_VPreg_InverseMap'], "Compressed", true);
 end
 
 
