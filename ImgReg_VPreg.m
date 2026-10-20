@@ -1,4 +1,4 @@
-function [phi, I_m_phi, phi_inv, I_f_phi_inv] = ImgReg_SymVPcontrol(I_m,I_f,J_thr,regrid_bd,name_is)
+function [phi, I_m_phi, phi_inv, I_f_phi_inv] = ImgReg_VPreg(I_m,I_f,J_thr,regrid_bd,name_is)
 I_m_orig = I_m;
 I_f_orig = I_f;
 I_m_max=max(I_m,[],"all");
